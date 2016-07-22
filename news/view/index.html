@@ -1,0 +1,82 @@
+<header>
+	今日头条
+</header>
+<aside>
+	<p>
+		<span>推荐</span>
+		<span>视频</span>
+		<span>热点</span>
+		<span>社会</span>
+		<span>娱乐</span>
+		<span>军事</span>
+	</p>
+</aside>
+<article>
+	<section ng-repeat="new in news">
+		<a ng-href="{{new.url}}">
+			<p>{{new.title}}</p>
+			<img ng-src="{{new.image_url}}"/>
+			<p class="content">
+				{{new.abstract}}
+			</p>
+		</a>
+	</section>
+</article>
+<style>
+	header{
+		background-color: #d43d3d;
+		position: fixed;
+		width: 100%;
+		text-align: center;
+		color: white;
+		height: 50px;
+		line-height:50px;
+		top:0;
+		z-index: 10;
+	}
+	aside{
+		width: 100%;
+		position: fixed;
+		top:50px;
+		background: #f4f5f6;
+		padding: 10px;
+		z-index: 10;
+	}
+	aside p span{
+		margin-right: 15px;
+	}
+	article{
+		position: relative;
+		margin-top:100px;
+	}
+	article section a{
+		text-decoration: none;
+		color:black;
+	}
+	article section{
+		position: relative;
+		height: 150px;
+		border-bottom: 1px solid #e8e8e8;
+	}
+	article section p{
+		margin-top:10px;
+		margin-left: 10px;
+	}
+	article section img{
+		margin-top:10px;
+		margin-left: 10px;
+		height: 80px;
+	}
+	.content {
+		float: right;
+		height: 72px;
+		/*position: absolute;
+		top: 5px;
+		right: 10px;*/
+		width: 50%;
+		overflow: hidden;
+		color: darkslategrey;
+		margin-right: 10px;
+	}
+	
+</style>
